@@ -1,12 +1,28 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  color: royalblue;
+  text-align: center;
+}
+
+table#grid {
+  margin: 0 auto;
+}
+
 td {
-  padding: 1em;
-  font-size: 150%;
+  height: 15px;
+  width: 15px; 
+  padding: 0.2em;
 }
 
 td.alive {
-  background-color: green;
+  background-color: royalblue;
+  color: royalblue;
 }
 
 td.dead {
   background-color: #ccc;
+  color: #ccc;
 }

@@ -1,5 +1,22 @@
+// ----- Random Matrix Grid -----
+var $table = document.getElementById("grid");
+
+// var matrix = matrixCreator(3, 3);
+
+function matrixCreator(numRows, numColumns){
+  var matrix = [];
+  for (var i = 0; i < numRows; i++){
+    matrix[i] = [];
+    for (var j = 0; j < numColumns; j++) {
+      matrix[i][j] = Math.round(Math.random())
+      }
+    }
+  return matrix
+}
+
+
 document.addEventListener('DOMContentLoaded', function(){
-  var matrix = [[0, 1, 0], [0, 1, 1], [0, 1, 1]];
+  var matrix = matrixCreator(3, 3);
   generateGrid(matrix);
 
   function generateGrid(matrix){
@@ -93,8 +110,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
   document.querySelector("#tick").addEventListener('click', function(){
     // Tick button has been pressed
-    matrix = calculateNextState(matrix);
-    generateGrid(matrix);
+    setInterval(function(){
+      matrix = calculateNextState(matrix);
+      generateGrid(matrix);
+    }, 100);
   });
 });
 
@@ -102,27 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-/*  MY ORIGINAL CODE
-// ----- Random Matrix Grid -----
-var $table = document.getElementById("grid");
-
-var matrix = matrixCreator(3, 3);
-
-function matrixCreator(numRows, numColumns){
-  var matrix = [];
-  for (var i = 0; i < numRows; i++){
-    matrix[i] = [];
-    for (var j = 0; j < numColumns; j++) {
-      matrix[i][j] = Math.round(Math.random())
-      }
-    }
-  return matrix
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-  matrixCreator(3, 3);
-});
-    
+/*  MY ORIGINAL CODE 
 
 
 // ----- Static Grid -----
